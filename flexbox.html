@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/collage.css">
+    <title>Flexbox</title>
+
+
+    <style>
+        /*
+        .container {
+            border: 2px solid salmon;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 250px;
+            flex-wrap: wrap;
+
+        }
+
+        .box {
+            border: 2px dashed tomato;
+            width: 80px;
+            height: 80px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid salmon;
+        }
+
+        .login-form-container {
+            display: flex;
+            justify-content: center;
+            /* height: 90vh;
+            border: 1px solid teal;
+            align-items: center;
+        }
+
+        .login-form input {
+            margin-top: 10px;
+        }
+
+        .item {
+            border: 1px solid teal;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            /* grid-template-columns: repeat(4, 100px); 
+            /* grid-template-columns: repeat(6, 1fr); 
+            /* grid-template-columns: 100px 100px 100px auto; 
+            grid-gap: 30px;
+            column-gap: 50px;
+            row-gap: 50px;
+            text-align: center;
+            justify-content: center;
+
+        }
+
+        .Calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            row-gap: 5px;
+            column-gap: 50px;
+            text-align: center;
+        }
+
+        .date,
+        .day {
+            background-color: aqua;
+            border-radius: 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day {
+            background-color: bisque;
+            font-size: 2em;
+        }
+
+        .container-responsive {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+        }
+
+        .food {
+            border: 2px solid sandybrown;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: bisque;
+
+        }
+
+        .food img {
+            width: 100%;
+            /* flex-wrap: wrap; 
+            display: f;
+
+        }
+
+        @media screen and (max-width: 576px) {
+            .container-responsive {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        button {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+            background-color: rgb(247, 193, 150);
+        }
+
+        .container-flexbox {
+            display: flex;
+            gap: 20px;
+
+        }
+
+        .flexbox {
+            background-color: aquamarine;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .container-item-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .item-flex {
+            border: 2px solid indianred;
+            padding: 20px;
+            background-color: aquamarine;
+
+        }
+
+        @media screen and (max-width:576px) {
+            container-flexbox {
+                flex-direction: column;
+            }
+        }
+        */
+
+        .container-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+            text-align: center;
+
+        }
+
+        .box-grid {
+            background-color: goldenrod;
+        }
+
+        #box-1 {
+            grid-row: span 5;
+
+        }
+
+        #box-11,
+        #box-12 {
+            grid-column: span 3;
+
+        }
+    </style>
+</head>
+
+
+
+<!-- 
+<body>   
+    <h1>Flexbox Layout</h1>
+
+    <div class="container">
+
+        <div class="box">Box-1</div>
+        <div class="box">Box-2</div>
+        <div class="box">Box-3</div>
+        <div class="box">Box-4</div>
+        <div class="box">Box-5</div>
+        <div class="box">Box-6</div>
+    </div>
+
+    <br><br><br>
+
+    <nav>
+        <div>
+            <a href="">Home</a>
+            <a href="">Profile</a>
+            <a href="">Blog</a>
+            <a href="">About</a>
+        </div>
+        <a href="">Login</a>
+    </nav>
+
+    <section class="login-form-container">
+        <form class="login-form">
+            <h3>Please Login</h3>
+            <input type="email" name="" id="" placeholder="Your email" required>
+            <input type="password" name="" id=" " placeholder="Your password" required>
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+    <h1>Explore 2D Grid Layout</h1>
+
+    <div class="container-grid">
+        <div class="item">item -1</div>
+        <div class="item">item -2</div>
+        <div class="item">item -3</div>
+        <div class="item">item -4</div>
+        <div class="item">item -5</div>
+        <div class="item">item -6</div>
+        <div class="item">item -7</div>
+        <div class="item">item -8</div>
+        <div class="item">item -9</div>
+        <div class="item">item -10</div>
+        <div class="item">item -11</div>
+        <div class="item">item -12</div>
+        <div class="item">item -13</div>
+        <div class="item">item -14</div>
+        <div class="item">item -15</div>
+        <div class="item">item -16</div>
+        <div class="item">item -17</div>
+        <div class="item">item -18</div>
+        <div class="item">item -19</div>
+        <div class="item">item -20</div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="Calendar">
+        <div class="day">S</div>
+        <div class="day">M</div>
+        <div class="day">T</div>
+        <div class="day">W</div>
+        <div class="day">T</div>
+        <div class="day">F</div>
+        <div class="day">S</div>
+        <div class="date">29</div>
+        <div class="date">30</div>
+        <div class="date">31</div>
+        <div class="date">1</div>
+        <div class="date">2</div>
+        <div class="date">3</div>
+        <div class="date">4</div>
+        <div class="date">5</div>
+        <div class="date">6</div>
+        <div class="date">7</div>
+        <div class="date">8</div>
+        <div class="date">9</div>
+        <div class="date">10</div>
+        <div class="date">11</div>
+        <div class="date">12</div>
+        <div class="date">13</div>
+        <div class="date">14</div>
+        <div class="date">15</div>
+        <div class="date">16</div>
+        <div class="date">17</div>
+        <div class="date">18</div>
+        <div class="date">19</div>
+        <div class="date">20</div>
+        <div class="date">21</div>
+        <div class="date">22</div>
+        <div class="date">23</div>
+        <div class="date">24</div>
+        <div class="date">25</div>
+        <div class="date">26</div>
+        <div class="date">27</div>
+        <div class="date">28</div>
+        <div class="date">29</div>
+        <div class="date">30</div>
+        <div class="date">1</div>
+        <div class="date">2</div>
+
+    </div>
+
+    .container-responsive>.food*12>img[src="images/pic.jpg"]+h3{Food Item -$}+p{Price: \$$00}+p>lorem20
+
+    <div class="container-responsive">
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -1</h3>
+            <p>Price: $100</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt dolores repellat quasi dolorem soluta
+                voluptatibus accusamus ad possimus porro odit!</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -2</h3>
+            <p>Price: $200</p>
+            <p>Quidem delectus quae obcaecati minima deserunt placeat at reiciendis, nobis modi, fugit sint corporis
+                exercitationem. Voluptatibus corporis reprehenderit deleniti recusandae?</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -3</h3>
+            <p>Price: $300</p>
+            <p>Numquam dolorem assumenda iusto perspiciatis! Voluptatum doloremque, exercitationem minima provident,
+                deleniti sequi quibusdam quae mollitia accusamus eveniet ipsa. Dolore, cum?</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -4</h3>
+            <p>Price: $400</p>
+            <p>Fugiat natus, praesentium, vitae perferendis culpa necessitatibus dolore saepe nam tempore id totam alias
+                reprehenderit sit repudiandae veritatis, molestias dignissimos.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -5</h3>
+            <p>Price: $500</p>
+            <p>Quos, ipsa natus aut aliquam eligendi quibusdam illum labore dignissimos dolorem fugiat necessitatibus
+                sit nihil molestias quam alias, ad veniam.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -6</h3>
+            <p>Price: $600</p>
+            <p>Aliquam in amet corrupti sapiente quas unde consequuntur deleniti quidem a rerum illum cumque, distinctio
+                adipisci vitae, fugiat aspernatur ut.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -7</h3>
+            <p>Price: $700</p>
+            <p>Minima rerum explicabo error ut, ipsa maxime labore? Dignissimos quas quasi eveniet architecto quis
+                tempore blanditiis totam velit labore nulla?</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -8</h3>
+            <p>Price: $800</p>
+            <p>Ut ex, facere repellendus repellat et consequuntur magni libero id soluta illo a tenetur vel perferendis
+                recusandae itaque dolor illum.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -9</h3>
+            <p>Price: $900</p>
+            <p>Voluptates ab aspernatur beatae consectetur. Hic nobis odio modi, iure odit corporis nostrum animi,
+                maiores dolor aspernatur optio vero. Similique.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -10</h3>
+            <p>Price: $1000</p>
+            <p>Modi at consequatur in ratione tenetur aspernatur asperiores maiores dolor, veniam voluptate nostrum amet
+                suscipit ducimus, sint molestiae cum laboriosam!</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -11</h3>
+            <p>Price: $1100</p>
+            <p>Molestias voluptatum nam neque est suscipit? Nisi dolore consectetur tempore quas officiis quod tenetur
+                amet eligendi fugiat veritatis, accusantium deleniti.</p>
+        </div>
+        <div class="food">
+            <img src="images/pic.jpg" alt="">
+            <h3>Food Item -12</h3>
+            <p>Price: $1200</p>
+            <p>Beatae, dolorum. Quia maxime nostrum commodi eligendi ut earum aperiam, natus blanditiis atque neque
+                dolorem sequi dolores consequuntur quos perspiciatis.</p>
+        </div>
+    </div>
+
+
+    <div class="container-responsive">
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -1</h3>
+            <p>Price: $100</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo sed inventore adipisci porro dignissimos
+                voluptatem error enim perspiciatis? Quos, veritatis?</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -2</h3>
+            <p>Price: $200</p>
+            <p>Impedit, assumenda possimus, voluptatem et odio facere sint iusto aliquid quos repellendus hic modi
+                dolore eligendi animi commodi labore autem?</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -3</h3>
+            <p>Price: $300</p>
+            <p>Hic, dolores? Quibusdam vitae ducimus illo, a quae culpa beatae reprehenderit repellendus alias sed. In
+                nesciunt quidem aperiam qui incidunt!</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -4</h3>
+            <p>Price: $400</p>
+            <p>Nisi molestias quibusdam ea dignissimos magni? Rem distinctio vel dolorum, facere dolore, ut repellat
+                asperiores suscipit, assumenda molestiae voluptatibus quas.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -5</h3>
+            <p>Price: $500</p>
+            <p>Tempore quibusdam suscipit, ratione neque iste animi? Dignissimos est eligendi itaque nobis aut vitae,
+                reiciendis temporibus esse sed molestiae nihil!</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -6</h3>
+            <p>Price: $600</p>
+            <p>Harum quasi nostrum nisi assumenda? Quia nam neque nobis recusandae officiis, aperiam quidem ipsam id
+                eaque harum adipisci perspiciatis autem!</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -7</h3>
+            <p>Price: $700</p>
+            <p>Dolores, perspiciatis culpa quasi omnis enim reprehenderit velit excepturi in temporibus voluptate ut
+                laboriosam fugit dignissimos dolor impedit alias animi?</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -8</h3>
+            <p>Price: $800</p>
+            <p>Consectetur doloremque incidunt nihil distinctio aut, error ad excepturi nam earum quos quod facilis
+                tenetur, sapiente itaque facere! Rerum, facere!</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -9</h3>
+            <p>Price: $900</p>
+            <p>Vitae doloremque ut hic sed soluta tempore consequuntur aliquam, corporis voluptate distinctio placeat
+                adipisci. A nulla aliquam maxime quasi eligendi?</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -10</h3>
+            <p>Price: $1000</p>
+            <p>Est dolore quasi distinctio odit, quibusdam sequi atque voluptate nam iste aliquam, reprehenderit
+                doloremque! Voluptate id deserunt in! Necessitatibus, id!</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -11</h3>
+            <p>Price: $1100</p>
+            <p>Quaerat aperiam nisi quis ullam delectus totam, a quae? Inventore ea doloribus omnis illo nostrum
+                excepturi optio minus incidunt sunt.</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="food">
+            <img src="images/pic.png" alt="">
+            <h3>Food Item -12</h3>
+            <p>Price: $1200</p>
+            <p>Maxime ratione beatae, officia laboriosam necessitatibus vel autem aperiam, nisi voluptatem minima
+                asperiores mollitia, praesentium voluptas. Molestias accusantium minus eligendi?</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+
+    
+
+
+
+
+    <h1>Felxible Flex</h1>
+    <div class="container-flexbox">
+        <div class="flexbox">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, pariatur saepe. Eveniet aliquid nam
+                necessitatibus totam iure vero, nobis cupiditate ducimus illo ratione repellat deserunt eligendi
+                voluptatum, ab adipisci eius.</p>
+        </div>
+        <div class="flexbox">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, provident dolore. Debitis, ullam atque
+                dolore amet, labore repellendus consequatur rerum deleniti corrupti consequuntur, fugiat non consectetur
+                maxime alias voluptatibus nisi.</p>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br>
+
+    <div class="container-item-flex">
+
+        <div class="item-flex">item - 1</div>
+        <div class="item-flex">item - 2</div>
+        <div class="item-flex">item - 3</div>
+        <div class="item-flex">item - 4</div>
+        <div class="item-flex">item - 5</div>
+        <div class="item-flex">item - 6</div>
+        <div class="item-flex">item - 7</div>
+        <div class="item-flex">item - 8</div>
+        <div class="item-flex">item - 9</div>
+        <div class="item-flex">item - 10</div>
+
+    </div>
+
+    
+
+    <header>
+        <h1>Picture Collage</h1>
+        <section>
+            <div class="row">
+                <img src="images/799711.jpg" alt="">
+            </div>
+            <div class="row">
+                <div>
+                    <img src="images/galaxy.png" alt="">
+                </div>
+                <div>
+                    <img src="images/hysteresis.jpg" alt="">
+                </div>
+
+                <div class="verticle-collage">
+                    <img src="images/iphone6.jfif" alt="">
+                    <img src="images/799711.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+
+                <div>
+                    <img src="images/sky.jpg" alt="">
+                </div>
+                <div class="verticle-collage-02">
+                    <img src="images/target.jpg" alt="">
+                    <img src="images/target.jpg" alt="">
+                    <img src="images/target.jpg" alt="">
+                    <img src="images/target.jpg" alt="">
+                </div>
+                <div>
+                    <img src="images/TDvRp7.jpg" alt="">
+                </div>
+
+            </div>
+        </section>
+
+
+
+    </header>
+
+    
+
+    <div class="container-box">
+        <div class="box-grid" id="box-1">Box - 1</div>
+        <div class="box-grid" id="box-2">Box - 2</div>
+        <div class="box-grid" id="box-3">Box - 3</div>
+        <div class="box-grid" id="box-4">Box - 4</div>
+        <div class="box-grid" id="box-5">Box - 5</div>
+        <div class="box-grid" id="box-6">Box - 6</div>
+        <div class="box-grid" id="box-7">Box - 7</div>
+        <div class="box-grid" id="box-8">Box - 8</div>
+        <div class="box-grid" id="box-9">Box - 9</div>
+        <div class="box-grid" id="box-10">Box - 10</div>
+        <div class="box-grid" id="box-11">Box - 11</div>
+        <div class="box-grid" id="box-12">Box - 12</div>
+    </div>
+-->
+</body> 
+
+   
+      
+
+
+    
+
+<body class="container">
+
+
+    <header class="header">
+
+        <h2>The Header</h2>
+
+    </header>
+
+
+    <nav class="nav">
+        <ul>
+            <li><a href="">Nav - 1</a></li>
+            <li><a href="">Nav - 2</a></li>
+            <li><a href="">Nav - 3</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+         <!-- article*3>h3{Main Article $}+p>lorem  -->
+
+        <article>
+            <h3>Main Article 1</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci consectetur at nihil doloremque in
+                hic
+                libero, voluptatum vel itaque similique cumque! Unde cumque sint minima vitae perferendis commodi
+                doloremque natus.</p>
+        </article>
+        <article>
+            <h3>Main Article 2</h3>
+            <p>Dignissimos incidunt doloremque nulla sit beatae fuga aspernatur numquam consequatur nihil placeat
+                ipsa
+                maxime modi veniam ab quaerat mollitia, aliquid sunt? Quaerat aperiam, laborum mollitia quasi natus
+                explicabo magni officiis.</p>
+        </article>
+        <article>
+            <h3>Main Article 3</h3>
+            <p>Odio maiores ut placeat omnis adipisci odit laboriosam nesciunt sequi cumque pariatur? Numquam fuga
+                illum
+                dicta, maxime totam magni nulla consequatur quo. Sunt, aut corporis. Expedita possimus
+                necessitatibus
+                harum quam.</p>
+        </article>
+
+    </main>
+    <aside>
+        <div class="sidebar">
+            <h4>Sidebar</h4>
+        </div>
+        <div class="advertise">
+            <h4>Advertise</h4>
+        </div>
+    </aside>
+
+    <footer class="footer">
+        <h3>The Footer</h3>
+
+    </footer>
+
+
+
+</body>
+
+
+
+</html>
